@@ -1,0 +1,30 @@
+body {
+   font-family: 'Oswald', sans-serif;
+   margin: 25px;
+}
+h1 {
+   font-weight: 500;
+}
+h2 {
+   font-weight: 300;
+}
+p {
+   font-weight: 300;
+}
+
+#parent {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+   grid-gap: 40px;
+}
+
+#parent figure {
+   margin: 0;
+   padding: 10px;
+   border: 1pt solid black;
+}
+#parent figcaption span {
+   display: inline-block;
+   width: 60px;
+   height: 60px;
+}

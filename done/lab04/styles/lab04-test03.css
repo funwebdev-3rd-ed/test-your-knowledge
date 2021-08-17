@@ -1,0 +1,103 @@
+
+* {
+   box-sizing: border-box;
+}
+body, section, header, div, p, h1, h2, h3, h4, ul, li {
+   margin: 0;
+   padding: 0;
+
+}
+body {
+   font-family: 'Open Sans', sans-serif;
+   box-sizing: border-box;
+   background-color: #e4e7eb;
+   padding: 20px 50px;
+   font-weight: 300;
+   background-color: white;   
+}
+section {
+   padding: 10px;
+}
+#typography div {
+   margin-top: 20px;
+}
+#colors {
+   text-align: center;
+}
+.circle {
+   display: inline-block;
+   margin: 5px;
+   width: 100px;
+   height: 100px;   
+   padding: 40px 25px;   
+}
+h1 {
+   margin: 20px 0;
+}
+
+/* add your styles here */
+h1 {
+   font-weight: 500;
+   letter-spacing: 5px;
+   color: deeppink;
+   text-align: center;
+
+}
+
+.circle {
+   border-radius: 50%;
+   font-size: 12px;   
+   text-transform: uppercase;
+}
+
+.color1 {
+   background-color: #f62f5e;
+}
+.color2 {
+   background-color: #f1ad3d;
+}
+.color3 {
+   background-color: #6ebdca;
+}
+.color4 {
+   background-color: #eefc91;
+}
+.color5 {
+   background-color: #F7ECEB;
+}
+
+
+.details {
+   font-size: 16px;
+   color: silver;
+   font-style: italic;
+}
+
+
+#typography h2 {
+   font-weight: 600;
+   font-size: 36px;
+   font-family: Oswald, sans-serif;
+}
+#typography h3 {
+   font-weight: 500;
+   font-size: 24px;
+   font-family: Oswald, sans-serif;
+}
+#typography h4 {
+   font-weight: 400;
+   font-size: 16px;
+   font-family: Oswald, sans-serif;
+}
+#typography .bodytext {
+   font-family: 'Open Sans', sans-serif;
+   font-size: 14px;
+   line-height: 24px;
+   font-weight: 400;
+}
+#typography .asidetext {
+   font-family: 'Open Sans', sans-serif;
+   font-size: 12px;
+   line-height: 14px;
+   font-weight: 300;
+}

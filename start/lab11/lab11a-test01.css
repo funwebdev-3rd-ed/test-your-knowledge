@@ -1,0 +1,177 @@
+:root {
+   --color-back: #E8E6E1;
+   --color-box-back: white;
+   --color-box-inverse: #E8E6E1;
+   --color-text-primary: #27241D;
+   --color-text-primary2: #625D52;
+   --color-border: #D3CEC4;
+   --color-buttons: #2680C2;
+
+   /* font scale increases by 1.125 */
+   --font-size-xs: 0.64em;
+   --font-size-sm: 0.8em;
+   --font-size-base: 1em;
+   --font-size-lg: 1.25em;
+   --font-size-xl: 1.563em;
+   --font-size-2xl: 1.953em;
+   --font-size-3xl: 2.441em;   
+
+   --font-light: 300;
+   --font-normal: 400;
+   --font-medium: 500;
+   --font-semibold: 600;
+   --font-bold: 700;   
+
+   /* box shadows */
+   --shadow: 3;
+   --shadow-soft: 4;
+
+   /* sizing */
+   --space-0: 0;
+   --space-1: 0.25rem;
+   --space-2: 0.5rem;
+   --space-3: 0.75rem;
+   --space-4: 1.0rem;
+   --space-5: 1.25rem;
+   --space-6: 1.5rem;
+   --space-8: 2rem;
+
+
+
+   --fonts: 'Lato', sans-serif;
+}
+/* use box-sizing everywhere */
+html { box-sizing: border-box; }
+*, *:before, *:after {
+   box-sizing: inherit;
+}  
+/* now do a reset */
+body, div, span, h1, h2, h3, h4, h5, aside, p, main, nav, ul, li, 
+fieldset, form, figure, figcaption, header, footer, nav, section, label, legend {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+}
+ul, li { list-style: none;}
+table { border-collapse: collapse; border-spacing: 0;}
+
+
+
+/* now set up base styling */
+
+body {
+   font-family: var(--fonts);
+   font-size: var(--font-size-base);
+   font-weight: var(--font-normal);
+   line-height: 1.65;
+   background-color: var(--color-back);
+   color: var(--color-text-primary);
+}
+h1 { 
+   font-weight: var(--font-semibold);
+   font-size: var(--font-size-2xl);
+}
+h2 { 
+   font-weight: var(--font-semibold);
+   font-size: var(--font-size-xl);
+}
+h3 { 
+   font-weight: var(--font-semibold);
+   font-size: var(--font-size-lg);
+}
+label { 
+   font-weight: var(--font-semibold);
+   font-size: var(--font-size-base);
+}
+
+
+/* component styling  */
+
+header {
+   padding: var(--space-2);
+   margin: var(--space-4);
+   font-weight: var(--font-medium);
+   font-size: var(--font-size-lg);   
+   background-color: var(--color-box-back);
+   box-shadow: 0 calc(var(--shadow) * .1px) calc(var(--shadow) * .2px) rgba(0,0,0,calc(var(--shadow) * .02)),0 calc(var(--shadow) * .2px) calc(var(--shadow) * .4px) rgba(0,0,0,calc(var(--shadow) * .02)),0 calc(var(--shadow) * .4px) calc(var(--shadow) * .8px) rgba(0,0,0,calc(var(--shadow) * .02)),0 calc(var(--shadow) * .8px) calc(var(--shadow) * 1.6px) rgba(0,0,0,calc(var(--shadow) * .02));
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+}
+header button {
+   border: 0;
+   border-radius: var(--space-1);
+   box-shadow: 0 calc(var(--shadow) * .1px) calc(var(--shadow) * .2px) rgba(0,0,0,calc(var(--shadow) * .02)),0 calc(var(--shadow) * .2px) calc(var(--shadow) * .4px) rgba(0,0,0,calc(var(--shadow) * .02)),0 calc(var(--shadow) * .4px) calc(var(--shadow) * .8px) rgba(0,0,0,calc(var(--shadow) * .02)),0 calc(var(--shadow) * .8px) calc(var(--shadow) * 1.6px) rgba(0,0,0,calc(var(--shadow) * .02));
+
+   background-color: var(--color-buttons);
+   color: var(--color-back);
+   display: inline-block;
+   padding: var(--space-2);
+   margin: var(--space-2) 0 0 var(--space-2);
+   font-size: var(--font-size-base);
+}
+
+.box {
+   margin: var(--space-4);
+   display: grid;
+   grid-template-columns: 3fr 1fr;
+   grid-gap: var(--space-4);
+
+   background-color: var(--color-box-back);
+   box-shadow: 0 calc(var(--shadow) * .1px) calc(var(--shadow) * .2px) rgba(0,0,0,calc(var(--shadow) * .02)),0 calc(var(--shadow) * .2px) calc(var(--shadow) * .4px) rgba(0,0,0,calc(var(--shadow) * .02)),0 calc(var(--shadow) * .4px) calc(var(--shadow) * .8px) rgba(0,0,0,calc(var(--shadow) * .02)),0 calc(var(--shadow) * .8px) calc(var(--shadow) * 1.6px) rgba(0,0,0,calc(var(--shadow) * .02));
+   padding: var(--space-4);
+}
+
+.paintingList {
+   border: 1px solid var(--color-border);
+   padding: var(--space-4);
+}
+.paintingList .row {
+/*    display: flex;
+   justify-content: space-between;
+   align-items: center; */
+   display: grid;
+   grid-template-columns: 120px auto 200px 100px 100px;
+   align-items: center;
+   margin-top: var(--space-4);
+}
+.paintingList .row img {
+   width: 100px;
+   height: 100px;   
+}
+.paintingList .row p {
+   text-align: left;
+}
+.paintingList a {
+   display: inline-block;
+   margin: var(--space-2);
+}
+.invert {
+   background-color: var(--color-box-inverse);
+}
+
+
+.paintingForm {
+   border: 1px solid var(--color-border);
+   padding: var(--space-4);   
+}
+.paintingForm img {
+   display: block;
+   width: 100%;
+   box-shadow: 0 calc(var(--shadow-soft) * .3px) calc(var(--shadow-soft) * 1.1px) rgba(0,0,0,0.1),0 calc(var(--shadow-soft) * .6px) calc(var(--shadow-soft) * 1.2px) rgba(0,0,0,0.1),0 calc(var(--shadow-soft) * 1.2px) calc(var(--shadow-soft) * 1.4px) rgba(0,0,0,0.1),0 calc(var(--shadow-soft) * 2.4px) calc(var(--shadow-soft) * 1.6px) rgba(0,0,0,0.1); 
+}
+.paintingForm div {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: var(--space-4);
+}
+.paintingForm input[type="text"] {
+   padding: var(--space-2);
+   font-size: var(--font-size-base);
+   color: var(--color-text-primary2);
+}
+
+

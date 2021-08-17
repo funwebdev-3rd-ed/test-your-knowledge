@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chapter 11</title>
+    <link href="lab11a-test01.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    
+    <!--The React JS libraries -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!--Initially, we will use the babel run-time library to convert JSX in the browser -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>    
+    
+    
+<script type="text/babel">
+
+const App = () => {
+
+   //later you will learn how to fetch this data from an API 
+   const data = [
+      {id: "016060", title: "Girl Arranging Her Hair", artist: "Mary Cassatt",  year: 1886},      
+      {id: "019160", title: "Farmhouse in Provence", artist: "Vincent Van Gogh", year: 1888},  
+      {id: "016070", title: "The Boating Party", artist: "Mary Cassatt",  year: 1893},
+      {id: "017040", title: "Woman with a Parasol", artist: "Claude Monet",  year: 1875},
+      {id: "017080", title: "The Bridge at Argenteuil", artist: "Claude Monet", year: 1874}
+   ];
+
+
+
+   return (
+      <article className="app">
+         Add your header here
+         <div className="box">
+            Add your other components inside here
+         </div>
+      </article>
+   );
+      
+}
+
+
+    
+ReactDOM.render(<App />, document.querySelector('#react-container')); 
+  
+</script> 
+        
+        
+  </head>
+  <body>
+    <div id='react-container' ></div>
+  </body>
+</html>

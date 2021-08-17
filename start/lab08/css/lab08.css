@@ -1,0 +1,172 @@
+
+/* Styles for Walkthrough 8.2 thru 8.16 */
+
+.centered {
+  display: flex;
+  justify-content: center;
+       
+}
+
+article#container div {
+    margin:20px 15px;
+    padding:25px 20px;
+
+    color: white;
+    box-shadow: 7px 6px 15px -7px rgba(0,0,0,0.38);
+    border-radius: 3px 3px 3px 3px;
+    background: rgb(50,153,187);
+    background: radial-gradient(circle, rgba(50,153,187,1) 0%, rgba(30,123,153,1) 100%);
+
+}
+
+.box {
+    width:20em;
+    margin:  20px auto;
+    padding: 0.5em;
+    box-shadow: 0px 0px 5px rgba(0,0,0,.8);
+    background-color:#fff ; 
+    text-align: left;
+}
+
+/* Styles for Test Your Knowledge #4 */
+
+#test4 {
+    font-family: 'Oswald', sans-serif;
+    margin: 25px;
+}
+#test4 h1 {
+    font-weight: 500;
+}
+#test4 h2 {
+    font-weight: 300;
+}
+#test4 section {
+    display: grid;
+    grid-template-columns: repeat(3, 225px);
+    grid-gap: 40px;
+}
+#test4 section figure {
+    margin: 0;
+    padding: 10px;
+    border: 1pt solid black;
+}
+#test4 section figcaption span {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+
+
+/* Styles for Walkthrough 8.17 */
+
+#firstExample {
+    background-color: #E9E9E9;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+th {
+    width: 6em;
+    height: 3em;
+    text-align: center;
+}
+
+td {
+    width: 6em;
+    height: 2em;
+    text-align: center;
+}
+
+em { color: red; font-style: italic; }
+
+tr.normal {
+    
+    background-color: #E4F8D3;    
+}
+tr.normal td, tr.normal th, tr.total th, tr.total td {
+    text-align: right;    
+    width: 5em;
+    height: 0.75em;
+    padding: 0.5em;
+    color: #5A574E;
+}
+
+tr.total {     
+    background-color: #96DD4F;
+}
+
+tr.total th, tr.total td {
+        font-weight: bold;
+    color: #000000;
+}
+
+/* Styles for Test Your Knowledge #6 */
+
+#test6 {
+    background-color: #97caf6;
+    font-family: 'Oswald', sans-serif; 
+    font-weight: 300;   
+    margin: 0 0;
+    padding: 0;
+}
+#test6 h1 {
+    font-weight: 500;
+    margin: 0;
+    padding: 0.5rem;     
+}
+#test6 h2 {
+    margin: 0;
+    padding: 0.25rem 0 0 0; 
+    text-align: center;    
+}
+#test6 header {
+    background-color: #113758;
+    color: white;
+    margin: 0 0;
+    padding: 0.25rem;
+}
+#test6 section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 0.25rem;
+    margin: 0.5rem;
+}
+#test6 .card {
+    background-color: white;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+    box-shadow: 6px 6px 5px 0px #216fb1;
+
+    display: flex;
+    flex-direction: column;
+}
+#test6 .card img {
+    height: 200px;
+}
+
+#test6 .card p {
+    font-size: 1rem;
+    color: #a7a7a7;
+    margin: 0.25rem 0 0 0;
+}
+#test6 .card div {
+    border-top: 1pt solid #9cafb7;
+    margin: 1rem 0 0 0;
+    padding: 0;    
+}
+#test6 .card div span {
+    float: right;
+    color: #174a76;
+}
+#test6 .card footer {
+    border-top: 1pt solid #9cafb7;
+    margin: 1rem 0 1rem 0;
+    padding: 0;      
+}
+#test6 small {
+    display: inline-block;
+    background-color: #2d95ec;
+    color: white;
+    padding: 2px;
+    margin: 0.25rem;
+}

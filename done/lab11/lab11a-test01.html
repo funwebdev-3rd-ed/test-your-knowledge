@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab 11a</title>
+    <link href="lab11a-test01.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    
+    <!--The React JS libraries -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!--Initially, we will use the babel run-time library to convert JSX in the browser -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>    
+    
+    
+<script type="text/babel">
+
+// Hooks Version
+const App = () => {
+
+   //later you will learn how to fetch this data from an API 
+   const data = [
+      {id: "016060", title: "Girl Arranging Her Hair", artist: "Mary Cassatt",  year: 1886},      
+      {id: "019160", title: "Farmhouse in Provence", artist: "Vincent Van Gogh", year: 1888},  
+      {id: "016070", title: "The Boating Party", artist: "Mary Cassatt",  year: 1893},
+      {id: "017040", title: "Woman with a Parasol", artist: "Claude Monet",  year: 1875},
+      {id: "017080", title: "The Bridge at Argenteuil", artist: "Claude Monet", year: 1874}
+   ];
+
+   const [paintings, setPaintings] = React.useState(data);
+   const [currentPainting, setCurrentPainting] = React.useState(data[0]);
+
+   const changePainting = (p) => {
+      setCurrentPainting(p);    
+   };
+  
+   const updatePainting = (modifiedPainting) => {
+      // create a shallow copy of the array
+      const updatedList = [...paintings];
+      // find the painting to modify
+      const index = updatedList.findIndex( p => p.id == modifiedPainting.id);
+      // replace it
+      updatedList[index] = modifiedPainting;
+      // update state
+      setPaintings(updatedList);
+      setCurrentPainting(modifiedPainting);
+   };  
+   
+   const undoChanges = () => {
+      const restoredList = [...data];
+      setPaintings(restoredList);     
+   }
+
+
+   return (
+      <article className="app">
+         <Header undo={undoChanges}/>
+         <div className="box">
+            <PaintingList 
+               current={currentPainting}
+               paintings={paintings} 
+               change={changePainting} />
+            <EditPaintingForm current={currentPainting} update={updatePainting} />
+         </div>
+      </article>
+   );
+
+
+      
+}
+
+/* 
+// CLASS Component Version 
+class App extends React.Component {
+   constructor(props) {
+      super(props);
+      //later you weill learn how to fetch this data from an API 
+      const data = [
+      {id: "016060", title: "Girl Arranging Her Hair", artist: "Mary Cassatt",  year: 1886},      
+      {id: "019160", title: "Farmhouse in Provence", artist: "Vincent Van Gogh", year: 1888},  
+      {id: "016070", title: "The Boating Party", artist: "Mary Cassatt",  year: 1893},
+      {id: "017040", title: "Woman with a Parasol", artist: "Claude Monet",  year: 1875},
+      {id: "017080", title: "The Bridge at Argenteuil", artist: "Claude Monet", year: 1874}
+      ];
+
+      this.state = { 
+                        original: data,
+                        paintings: data,
+                        currentPainting: data[0]
+                   };
+   } 
+
+   changePainting = (p) => {
+      this.setState({currentPainting: p});    
+   }
+
+   updatePainting = (modifiedPainting) => {
+      const updatedList = [...this.state.paintings];
+      // find the painting to modify
+      const index = updatedList.findIndex( p => p.id == modifiedPainting.id);
+      // replace it
+      updatedList[index] = modifiedPainting;
+      this.setState({paintings: updatedList});
+      this.setState({currentPainting: modifiedPainting});
+   };  
+   
+   undoChanges = () => {
+      const restoredList = [...this.state.original];
+      this.setState({paintings: restoredList});     
+   }
+
+   render() {
+      return (
+         <article className="app">
+            <Header undo={this.undoChanges}/>
+            <div className="box">
+               <PaintingList 
+                  current={this.state.currentPainting}
+                  paintings={this.state.paintings} 
+                  change={this.changePainting} />
+               <EditPaintingForm painting={this.state.currentPainting} update={this.updatePainting} />
+            </div>
+         </article>
+      );
+   }     
+}
+*/
+
+
+const PaintingList = (props) => {
+   return (         
+      <section className="paintingList">
+         { props.paintings.map( p => <PaintingListItem  
+            painting={p} key={p.id} 
+            current={props.current}
+            change={props.change} /> )}
+      </section>
+   );
+}
+
+
+
+const EditPaintingForm = (props) => {
+
+   const handleInputChange = (e) => {
+      // create a shallow copy of the object
+      const modifiedPainting = {...props.current};
+      // get the name and value of the form element that called this handler
+      const {name, value} = e.target;
+      // change the painting property using bracket notation
+      modifiedPainting[name] = value;
+      // now tell the parent to update the painting data with this new data      
+      props.update(modifiedPainting);
+   } 
+
+   const {id,title,artist,year} = props.current;
+
+   return (
+      <section className="paintingForm">
+         <img src={"paintings/" + id + ".jpg"} alt={title} /> 
+         <div>
+            <label>Title</label>
+            <input type="text" name="title" value={title} onChange={ handleInputChange } />
+         </div>
+         <div>
+            <label>Artist</label>
+            <input type="text" name="artist" value={artist} onChange={ handleInputChange } />
+         </div> 
+         <div>
+            <label>Year</label>
+            <input type="text" name="year" value={year} onChange={ handleInputChange } />
+         </div>                                           
+      </section>
+   );   
+}
+
+
+
+const PaintingListItem = (props) => {
+
+   const {painting,change} = props;
+   const handleSelect = (e) => {
+      change(painting);
+   }
+
+   let classCombo = "row";
+   if (painting.id == props.current.id) classCombo += " invert";
+
+   return (
+      <div className={classCombo} onClick={handleSelect}>
+         <img src={"paintings/square/" + painting.id + ".jpg"} alt={painting.title} />
+         <h3>{painting.title}</h3>
+         <p>{painting.artist}</p>
+         <p>{painting.year}</p>
+      </div>
+   );
+
+}
+
+
+const Header = props => {
+   return (
+      <header>
+         <h1>Test Your Knowledge #1</h1>
+         <button onClick={props.undo}>Undo Edits</button>
+      </header>
+   );
+}
+    
+ReactDOM.render(<App />, document.querySelector('#react-container')); 
+  
+</script> 
+        
+        
+  </head>
+  <body>
+    <div id='react-container' ></div>
+  </body>
+</html>

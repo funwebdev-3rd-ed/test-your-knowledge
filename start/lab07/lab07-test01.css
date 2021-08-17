@@ -1,0 +1,51 @@
+html { box-sizing: border-box; }
+*, *:before, *:after {
+box-sizing: inherit;
+}   
+
+body {
+   padding: 0;
+   margin: 0;
+}
+header {
+   color: white;         
+}
+header h2 {
+   font-size: 36px;
+   margin: 0.5em 0 0 0.5em ;
+}
+header nav {
+   font-size: 48px;
+   margin: 0.5em 0.5em 0 0;
+}
+
+ 
+main form {
+   width: 40em;
+   height: 80vh;   
+   color: white;            
+}
+main label {
+   display: inline-block;
+   height: 1.75em;
+   padding: 0.25em 0.25em;
+   font-size: 32px;
+   background-color: teal;
+}
+input[type="search"], input[type="submit"] {
+   display: inline-block;   
+   height: 3.5em;
+   padding: 0.25em;
+   font-size: 18px;
+}
+input[type="submit"] {
+   color: white;
+   background-color: #DA127D;
+   border: 0;
+   border-top-right-radius: 5px;
+   border-bottom-right-radius: 5px;      
+}
+
+/* add your styles below */
+
+/* the filename for the background image is images/P6120375.jpg  */

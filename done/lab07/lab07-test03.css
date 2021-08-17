@@ -1,0 +1,171 @@
+:root {
+   --base-font-size: 100%;
+
+   /* use a 1.2 type scale */
+   --font-size-1: 1em;
+   --font-size-2: calc( var(--base-font-size) * 1.2);
+   --font-size-3: calc( var(--font-size-2) * 1.2);
+   --font-size-4: calc( var(--font-size-3) * 1.2);
+   --font-size-5: calc( var(--font-size-4) * 1.2);
+   --font-size-6: calc( var(--font-size-5) * 1.2);
+   --font-size-7: calc( var(--font-size-6) * 1.2);
+
+   --spacing-extra-large: 8em;
+   --spacing-large: 4em;
+   --spacing-med: 2em;
+   --spacing-small: 1em;
+   --spacing-very-small: 0.5em;
+}
+
+html { box-sizing: border-box; }
+*, *:before, *:after {
+box-sizing: inherit;
+}  
+body, div, span, h1, h2, h3, h4, aside, p, main, nav, ul, li {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+html {font-size: var(--base-font-size)}
+
+body {
+   font-family: 'Roboto', sans-serif;
+   font-weight: 400;
+   font-size: var(--font-size-1);
+   color: var(--color-neutral-800);
+   background-color: var(--color-neutral-050);
+ }
+
+h2 { 
+   font-size: var(--font-size-7);
+   font-weight: 500;
+   margin-bottom: var(--spacing-very-small);
+}
+h3 { 
+   font-size: var(--font-size-5);
+   font-weight: 400;
+}
+
+.container {
+   background-color: var(--color-neutral-050);
+   display: grid;
+   grid-gap: 0;   
+   grid-template-columns: 1fr 1fr;
+   margin: var(--spacing-med);   
+}
+
+
+
+.formData {
+   background: linear-gradient( var(--color-primary-1-500), var(--color-primary-1-800) );
+   color: var(--color-primary-1-050);
+   padding: var(--spacing-large);
+}
+.formData form {
+   margin-top: var(--spacing-med);
+   display: flex;
+   flex-direction: column;
+}
+.formData input {
+   flex: 1 1 40px;
+   width: 90%;
+   padding: var(--spacing-small);
+   color: var(--color-neutral-400);
+}
+.formData input[type="submit"] {
+   height: calc( var(--spacing-small) * 10);
+   margin-top: var(--spacing-large);
+   border: 0;
+   border-radius: var(--spacing-very-small);
+   background-color: var(--color-primary-2-400);
+   color: var(--color-primary-2-050);
+   font-weight: 500;
+   cursor: pointer;
+}
+.formData input[type="submit"]:hover {
+   background-color: var(--color-primary-2-500);
+}
+.formData label {
+   margin-top: var(--spacing-med);
+}
+.formData button {
+   display: inline-block;
+   margin: var(--spacing-small) var(--spacing-small) 0 0;
+   background-color: transparent;
+   color: var(--color-primary-2-400);
+   border: solid 1px var(--color-primary-2-400);
+   border-radius: var(--spacing-very-small);
+   padding: var(--spacing-very-small);
+   width: 25%;
+   font-size: var(--font-size-3);
+   cursor: pointer;
+}
+.formData button:hover {
+   border: solid 1px var(--color-primary-2-500);
+   color: var(--color-primary-2-500);
+}
+
+.formImage {
+   background-image: url(images/20991329924.jpg);
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;  
+
+   display: flex;
+   justify-content: center;
+   align-items: center;   
+}
+
+.planType {
+   padding: var(--spacing-large);
+   background-color: var(--color-primary-1-050);
+   border: 0;
+   border-radius: var(--spacing-very-small);
+   width: 24em;
+}
+
+.option {
+   border: solid 1px var(--color-primary-1-100);
+   margin-top: var(--spacing-small);
+   height: calc( var(--spacing-small) * 3);
+   width: 16em;
+   padding: var(--spacing-small);
+   display: flex;
+   justify-content: space-between;
+}
+
+.rule {
+   margin-top: var(--spacing-large);
+}
+
+/* add your media query here */
+
+@media only screen and (max-width: 1024px) {
+   :root {
+      --base-font-size: 120%;      
+   }   
+   .container {
+      grid-template-columns: 1fr;
+      margin: var(--spacing-small);
+   }
+
+   .formImage {
+
+      background: var(--color-neutral-050);
+      justify-content: flex-start;  
+   }   
+   .planType {
+      padding: var(--spacing-med);
+      width: 100%;
+      padding-left:  var(--spacing-med);
+   }   
+   .option {
+      width: 90%;
+   }
+   .formData {
+      padding: var(--spacing-med);
+   }   
+   .formData form {
+      margin-top: var(--spacing-small);
+   }
+}

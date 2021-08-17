@@ -1,0 +1,88 @@
+
+/* Add selector that will select all elements in the body
+{
+   font-family: 'Raleway', sans-serif;   
+   font-weight: 300;   
+   margin: 25px;
+}
+ */
+
+
+/* Add selector for both heading tags 
+{
+   font-family: 'Merriweather', serif;
+}
+*/
+
+
+/* Add selector that will select first level headings
+{
+   font-weight: 900;
+} 
+*/
+
+
+/* Add selector that will select second level headings
+{
+   font-weight: 300;
+} 
+*/
+
+
+/* Add id selector for parent section
+{
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+   grid-gap: 40px;
+}
+*/
+
+/* Add selector for figures within section
+{
+   margin: 0;
+   padding: 10px;
+   border: 1pt solid black;
+}
+*/
+
+
+/* Add selector for first <p> elements after <h2>
+{
+   font-style: italic;
+}
+*/
+
+
+/* Add selector for all <p> elements that follow an <h2>
+{
+   color: slateblue;
+}
+*/
+
+
+/* Add selector for elements whose alt attribute contains Museum
+{
+   border: 1pt solid slateblue;
+   padding: 5px;
+}
+*/
+
+
+/* Add selector for links within figcaption that makes them look like a button
+{
+   display: inline-block;
+   background-color: darkblue;
+   color: white;
+   padding: 1em 1.5em;
+   text-decoration: none;
+   text-transform: uppercase;   
+}
+*/
+
+
+/* Add selector for same links hover appearance
+{
+   background-color: slateblue;
+
+}
+*/

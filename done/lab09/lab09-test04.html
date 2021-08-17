@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8"/>  
+    <title>Lab 9</title>   
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,800" rel="stylesheet">    
+    <link rel="stylesheet" href="css/lab09-test04.css">
+    <script src="js/lab09-test04.js"></script> 
+</head>
+<body class="tiled">
+
+<header>
+    <h1>Test Your Knowledge #4</h1>
+</header>
+<main>
+    <div id="sliderBox">
+        <form>
+           <label>Opacity: </label><p><input type="range" id="sliderOpacity" min="0" max="100" value="100" class="sliders" /> <span id="numOpacity">100</span>%</p>
+           <p><label>Saturation: </label><input type="range" id="sliderSaturation" min="1" max="300" value="100" class="sliders"/> <span id="numSaturation">100</span>%</p>
+           <p><label>Brightness: </label><input type="range" id="sliderBrightness" min="0" max="300" value="100" class="sliders" /> <span id="numBrightness">100</span>%</p>
+           <p><label>Hue Rotate: </label><input type="range" id="sliderHue" min="0" max="360" value="0" class="sliders" /> <span id="numHue">0</span>deg</p>
+           <p><label>Grayscale: </label><input type="range" id="sliderGray" min="0" max="100" value="0" class="sliders"/> <span id="numGray">0</span>%</p>
+           <p><label>Blur: </label><input type="range" id="sliderBlur" min="0" max="10" value="0" class="sliders" /> <span id="numBlur">0</span>px</p>
+           <p><button id="resetFilters">Reset</button> </p>
+        </form>    
+    </div>
+    <figure id="imgManipulated">
+        <img src="images/medium/painting1.jpg" > 
+        <figcaption>
+            <em>Woman with a Parasol</em> <br>            
+			<span>Claude Monet, 1875</span>
+        </figcaption>
+    </figure>   
+    <div id="thumbBox">
+        <div><img src="images/small/painting1.jpg"  alt="Woman with a Parasol" title="Claude Monet, 1875"/></div>
+        <div><img src="images/small/painting2.jpg"  alt="Ginevra de' Benci" title="Raphael, c. 1515"/></div>
+        <div><img src="images/small/painting3.jpg"  alt="Madame Bergeret" title="Francois Boucher, 1766"/></div>
+        <div><img src="images/small/painting4.jpg"  alt="Girl Arranging Her Hair" title="Mary Cassatt, 1886"/></div>
+        <div><img src="images/small/painting5.jpg"  alt="Self-portrait" title="Vincent van Gogh, 1889"/></div>
+    </div>
+</main>
+
+</body>
+</html>

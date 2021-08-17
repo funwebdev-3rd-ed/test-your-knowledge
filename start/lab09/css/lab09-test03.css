@@ -1,0 +1,106 @@
+/* CSS styling and example from Wes Bos available from https://javascript30.com/
+   Used with permission. Highly recommended!  */
+
+html {
+     box-sizing: border-box;
+     background:#ffc600;
+     font-family:'Open Sans';
+     font-size: 14px;
+     font-weight: 400;
+}
+ body {
+     margin: 0;
+}
+ *, *:before, *:after {
+     box-sizing: inherit;
+}
+ .panels {
+     min-height:100vh;
+     overflow: hidden;
+     display: flex;
+}
+ .panel {
+     background:#6B0F9C;
+     box-shadow:inset 0 0 0 5px rgba(255,255,255,0.1);
+     color:white;
+     text-align: center;
+     align-items:center;
+    /* Safari transitionend event.propertyName === flex */
+    /* Chrome + FF transitionend event.propertyName === flex-grow */
+     transition: font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11), flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11), background 0.2s;
+     font-size: 20px;
+     background-size:cover;
+     background-position:center;
+     flex: 1;
+     justify-content: center;
+     align-items: center;
+     display: flex;
+     flex-direction: column;
+}
+/*
+ .panel1 {
+     background-image:url(https://source.unsplash.com/8y8DbWwDTz4/1500x1500);
+}
+ .panel2 {
+     background-image:url(https://source.unsplash.com/ZQsKyddXezA/1500x1500);
+}
+ .panel3 {
+     background-image:url(https://source.unsplash.com/cbHtEWXkIdQ/1500x1500);
+}
+ .panel4 {
+     background-image:url(https://source.unsplash.com/FwiNLpZdKVk/1500x1500);
+}
+ .panel5 {
+     background-image:url(https://source.unsplash.com/w8TtcStjyWY/1500x1500);
+}
+*/
+.panel1 {
+     background-image:url(https://res.cloudinary.com/funwebdev/image/upload/v1589661805/travel/15128113051.jpg);
+}
+ .panel2 {
+     background-image:url(https://res.cloudinary.com/funwebdev/image/upload/v1589661807/travel/21587937686.jpg);
+}
+ .panel3 {
+     background-image:url(https://res.cloudinary.com/funwebdev/image/upload/v1589661805/travel/9504609042.jpg);
+}
+ .panel4 {
+     background-image:url(https://res.cloudinary.com/funwebdev/image/upload/v1589661803/travel/9498381010.jpg);
+}
+ .panel5 {
+     background-image:url(https://res.cloudinary.com/funwebdev/image/upload/v1589661803/travel/9498358806.jpg);
+}
+
+ .panel > * {
+     margin:0;
+     width: 100%;
+     transition:transform 0.5s;
+     flex: 1 0 auto;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+ .panel > *:first-child {
+     transform: translateY(-100%);
+}
+ .panel.open-active > *:first-child {
+     transform: translateY(0);
+}
+ .panel > *:last-child {
+     transform: translateY(100%);
+}
+ .panel.open-active > *:last-child {
+     transform: translateY(0);
+}
+ .panel p {
+     text-transform: uppercase;
+     font-family: 'Open Sans', cursive;
+     text-shadow:0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+     font-size: 1em;
+}
+ .panel p:nth-child(2) {
+     font-size: 3em;
+}
+ .panel.open {
+     font-size:40px;
+     flex: 5;
+}

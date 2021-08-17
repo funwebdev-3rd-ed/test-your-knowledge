@@ -1,0 +1,42 @@
+
+body {
+   background-color: white;
+   margin: 1em;
+   font-family: 'Roboto Condensed', sans-serif;
+   font-weight: 400;    
+   font-size: 16px;
+}
+
+table#league {
+   border-collapse: collapse;
+}
+
+table#league thead {
+   background-color: #EDEDED;
+}
+
+#league thead th {
+   padding: 0;
+   color: #828282;
+   font-weight: 700;
+   font-size: 14px;    
+}
+table#league th, table#league td {
+   text-align: left;
+   width: 50px;   
+}
+table#league tr {
+   padding: 12px 0;
+   height: 40px;
+}
+table#league tbody tr {
+   border-bottom: solid 2px #EDEDED;
+}
+
+table#league td.team {
+   width: 200px;
+}
+
+table#league td:nth-child(1), table#league th:nth-child(1) {
+   padding-left: 24px;
+}

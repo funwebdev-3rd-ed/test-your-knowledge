@@ -1,0 +1,106 @@
+:root {
+   --base-font-size: 87.5%;
+
+   /* use a 1.2 type scale */
+   --font-size-1: 1em;
+   --font-size-2: calc( var(--base-font-size) * 1.2);
+   --font-size-3: calc( var(--font-size-2) * 1.2);
+   --font-size-4: calc( var(--font-size-3) * 1.2);
+   --font-size-5: calc( var(--font-size-4) * 1.2);
+   --font-size-6: calc( var(--font-size-5) * 1.2);
+
+   --spacing-large: 2em;
+   --spacing-med: 1em;
+   --spacing-small: 0.5em;
+}
+html { box-sizing: border-box; }
+*, *:before, *:after {
+box-sizing: inherit;
+}  
+body, div, span, h1, h2, h3, h4, aside, p, main, nav, ul, li {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+html {font-size: 87.5%;}
+
+body {
+   font-family: 'Roboto', sans-serif;
+   font-weight: 400;
+   font-size: var(--font-size-1);
+   color: var(--color-neutral-800);
+ }
+h1 { 
+   font-size: var(--font-size-5);
+   font-weight: 500;
+}
+h2 { 
+   font-size: var(--font-size-4);
+   font-weight: 400;
+   border-bottom: solid 1px var(--color-neutral-400);
+}
+h3 { 
+   font-size: var(--font-size-3);
+   font-weight: 400;
+}
+nav ul, aside ul {
+   padding-top: var(--spacing-large);
+}
+nav li, aside li {
+   margin-bottom: var(--spacing-med);
+}
+
+nav {
+   background-color: var(--color-primary-1-800);
+   color: var(--color-primary-1-050);
+   font-size: var(--font-size-2);
+   padding: var(--spacing-med);   
+}
+aside {
+   background-color: var(--color-primary-1-600);
+   color: var(--color-primary-1-050);
+   font-size: var(--font-size-2);
+   padding: var(--spacing-med);
+}
+main {
+   background-color: var(--color-neutral-050);
+   padding: var(--spacing-med);   
+}
+main h3 {
+   margin: var(--spacing-med) 0;
+}
+.square {
+   width: 250px;
+   height: 250px;
+}
+#art1 {
+   background-image: url(images/art-1.jpg);
+}
+#art2 {
+   background-image: url(images/art-2.jpg);
+}
+#art3 {
+   background-image: url(images/art-3.jpg);
+}
+#art4 {
+   background-image: url(images/art-4.jpg);
+}
+.theme button {
+   display: inline-block;
+   background-color: var(--color-support-1-500);
+   color: var(--color-support-1-050);
+   font-weight: 500;
+   font-size: var(--font-size-2);
+   border: 0;
+   border-radius: 3px;
+   padding: var(--spacing-small);
+   margin-top: var(--spacing-med);
+   box-shadow: 2px 2px 2px 2px var(--color-neutral-200);
+}
+.theme ul {
+   cursor: pointer;
+}
+
+
+/* add styles here */
+
